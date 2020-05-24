@@ -49,9 +49,9 @@ int main() {
 
       fout << mu << " " << L2 << endl;
       
-      fout2 << mu << " " << -2*log(L2) << endl;
+      fout2 << mu << " " << (-2)*log(L2) << endl;
 
-      fout3 << mu << " " << -2*log(L2)-(-2*log(3.11538)) << endl;
+      fout3 << mu << " " << (-2)*log(L2)-((-2)*log(3.11538)) << endl;
       
     }
     fout << "Der beste Schätzwert für mu liegt bei ca. 3.12." << endl;
@@ -60,11 +60,11 @@ int main() {
 double lambda = L/y_ges;
 
 cout << lambda << endl;
+cout << (-2)*log(lambda) << endl;
 
 int n_dof = 233;
 
-double z = (-2*log(lambda) - n_dof) / sqrt(2* n_dof);
-
+double z = ((-2)*log(lambda) - n_dof) / sqrt(2*n_dof);
 cout << z << endl;
 
     fin.close();

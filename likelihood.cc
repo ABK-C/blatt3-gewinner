@@ -10,7 +10,6 @@ return pow(mu,k)*exp(-mu)/tgamma(k+1);
 
 double mu;
 double L = 1;
-double L2 = 1;
 double y_ges = 1;
 int i;
 
@@ -33,20 +32,20 @@ int main() {
     for(int k : daten) {
     double li = prob(k, 3.11538);
     L *= li;
-      
-    double li2 = prob(k, mu);
-    L2 *= li2;  
 
-
-    
     double y = prob(k, k);
     y_ges *= y;
-    }
+     } 
     
     cout << L << endl;
 
-
     for (mu = 0; mu < 6; mu+=0.01) {
+      double L2 = 1;
+      
+      for(int k : daten) {    
+        double li2 = prob(k, mu);
+        L2 *= li2;  
+      }
 
       fout << mu << " " << L2 << endl;
       
